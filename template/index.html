@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- metadata elements -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/static/style.css">
+  <title>Technical Doc Page</title>
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]--> 
+</head>
+
+<body>
+  <!-- page title and navigation links -->
+  <nav id="navbar">
+    <!-- page title -->
+    <header id="nav-header">
+      CSS Documentation
+    </header>
+    <!-- navigation links -->
+    <div id="nav-scroll">
+      <a class="nav-link" href="#Introduction">Introduction</a>
+      <a class="nav-link" href="#Prerequisites">Prerequisites</a>
+      <a class="nav-link" href="#CSS_syntax">CSS syntax</a>
+      <a class="nav-link" href="#Adding_CSS_to_your_document">Adding CSS to your document</a>
+      <a class="nav-link" href="#Styling_HTML_elements">Styling HTML elements</a>
+      <a class="nav-link" href="#Changing_element_defaults">Changing element defaults</a>
+      <a class="nav-link" href="#Adding_a_class">Adding a class</a>
+      <a class="nav-link" href="#Styling_things_based_on_state">Styling things based on state</a>
+    </div>
+  </nav>
+
+  <!-- page content by sections -->
+  <main id="main-doc">
+    <div>
+    <!-- introduction section -->
+    <section id="Introduction" class="main-section">
+      <header id="section-header">
+        Introduction
+      </header>
+      <p>
+        CSS (Cascading Style Sheets) is used to style and lay out web pages — for example, to alter the font, color, size, and spacing of your content, split it into multiple columns, or add animations and other decorative features. This module provides a gentle beginning to your path towards CSS mastery with a basic knowledge of:
+      </p>
+      <ul>
+        <li>
+          how it works
+        </li>
+        <li>
+          what the syntax looks like
+        </li>
+        <li>
+          how to start using it to add styling to HTML.
+        </li>
+      </ul>
+    </section>
+
+    <!-- prerequisites section -->
+    <section id="Prerequisites" class="main-section">
+      <header id="section-header">
+        Prerequisites
+      </header>
+      <p>
+        Before starting this module, you should have:
+      </p>
+      <ol>
+        <li>
+          Basic familiarity with using computers, and using the Web passively (i.e. looking at it, consuming the content.)
+        </li>
+        <li>
+          A basic work environment set up as detailed in Installing basic software, and an understanding of how to create and manage files, as detailed in Dealing with files.
+        </li>
+        <li>
+          Basic familiarity with HTML, as discussed in the Introduction to HTML module.
+        </li>
+      </ol>
+    </section>
+
+    <!-- css syntax section -->
+    <section id="CSS_syntax" class="main-section">
+      <header id="section-header">
+        CSS syntax
+      </header>
+      <p>
+        CSS is a rule-based language — you define rules specifying groups of styles that should be applied to particular elements or groups of elements on your web page. For example "I want the main heading on my page to be shown as large red text."
+      </p>
+      <p>
+        The following code shows a very simple CSS rule that would achieve the styling described above:
+        <code class="code-section">
+          h1 {color: red; font-size: 5em;}
+        </code>
+      </p>
+      <p>
+        The rule opens with a selector . This selects the HTML element that we are going to style. In this case we are styling level one headings (
+        <code class="code-embeded">
+          &lt;h1&gt;
+        </code>).
+      </p>
+      <p>
+        We then have a set of curly braces { }. Inside those will be one or more declarations, which take the form of property and value pairs. Each pair specifies a property of the element(s) we are selecting, then a value that we'd like to give the property.
+      </p>
+      <p>
+        Before the colon, we have the property, and after the colon, the value. CSS properties have different allowable values, depending on which property is being specified. In our example, we have the color property, which can take various color values. We also have the font-size property. This property can take various size units as a value.
+      </p>
+      <p>
+        A CSS stylesheet will contain many such rules, written one after the other.
+        <code class="code-section">
+          h1 {color: red; font-size: 5em;} p {color: black;}
+        </code>
+      </p>
+    </section>
+
+    <!-- adding css to doc section -->
+    <section id="Adding_CSS_to_your_document" class="main-section">
+      <header id="section-header">
+        Adding CSS to your document
+      </header>
+      <p>
+        The very first thing we need to do is to tell the HTML document that we have some CSS rules we want it to use. There are three different ways to apply CSS to an HTML document that you'll commonly come across, however, for now, we will look at the most usual and useful way of doing so — linking CSS from the head of your document.
+      </p>
+      <p>
+        Create a file in the same folder as your HTML document and save it as
+        <code class="code-embeded">
+          &lt;styles.css&gt;
+        </code>
+        . The
+        <code class="code-embeded">
+          &lt;.css&gt;
+        </code> 
+        extension shows that this is a CSS file.
+      </p>
+      <p>
+        To link
+        <code class="code-embeded">
+          &lt;styles.css&gt;
+        </code> 
+        to
+        <code class="code-embeded">
+          &lt;index.html&gt;
+        </code> 
+        add the following line somewhere inside the
+        <code class="code-embeded">
+          &lt;head&gt;
+        </code> 
+        of the HTML document:
+      </p>
+    </section>
+ 
+    <!-- styling html elements section -->
+    <section id="Styling_HTML_elements" class="main-section">
+      <header id="section-header">
+        Styling HTML elements
+      </header>
+      <p>
+        By making our heading red we have already demonstrated that we can target and style an HTML element. We do this by targetting an element selector — this is a selector that directly matches an HTML element name. To target all paragraphs in the document you would use the selector p. To turn all paragraphs green you would use:
+        <code class="code-section">
+          p {color: green;}
+        </code>
+      </p>
+      <p>
+        You can target multiple selectors at once, by separating the selectors with a comma. If I want all paragraphs and all list items to be green my rule looks like this:
+        <code class="code-section">
+          p, li {color: green;}
+        </code>
+      </p>
+    </section>
+      
+    <!-- changing elements defaults -->
+    <section id="Changing_element_defaults" class="main-section">
+      <header id="section-header">
+        Changing element defaults
+      </header>
+      <p>
+        When we look at a well-marked up HTML document, even something as simple as our example, we can see how the browser is making the HTML readable by adding some default styling. Headings are large and bold and our list has bullets. This happens because browsers have internal stylesheets containing default styles, which they apply to all pages by default; without them all of the text would run together in a clump and we would have to style everything from scratch. All modern browsers display HTML content by default in pretty much the same way.
+      </p>
+      <p>
+          However, you will often want something other than the choice the browser has made. This can be done by simply choosing the HTML element that you want to change, and using a CSS rule to change the way it looks.  A good example is our
+        <code class="code-embed">
+          &lt;ul&gt;
+        </code>
+          , an unordered list. It has list bullets, and if I decide I don't want those bullets I can remove them like so:
+        <code class="code-section">
+          li { list-style-type: none;}
+        </code>
+      </p>
+    </section>
+    
+    <!-- adding a class section -->
+    <section id="Adding_a_class" class="main-section">
+      <header id="section-header">
+        Adding a class
+      </header>
+      <p>
+        So far we have styled elements based on their HTML element names. This works as long as you want all of the elements of that type in your document to look the same. Most of the time that isn't the case and so you will need to find a way to select a subset of the elements without changing the others. The most common way to do this is to add a class to your HTML element and target that class.
+      </p>
+      <p>
+        In your HTML document, add a class attribute to the second list item. Your list will now look like this:
+        <code class="code-section">
+          &lt;ul&gt;<br>
+          &lt;li&gt;Item one&lt;/li&gt;<br>
+          &lt;li class="special"&gt;Item two&lt;/li&gt;<br>
+          &lt;li&gt;Item&lt;em&gt; three&lt;/em&gt;&lt;/li&gt;<br>
+          &lt;/ul&gt;
+        </code>
+      </p>
+      <p>
+        In your CSS you can target the class of special by creating a selector that starts with a full stop character. Add the following to your CSS file:
+        <code class="code-section">
+          .special { color: orange; font-weight: bold;
+        </code>
+      </p>
+      <p>
+        Save and refresh to see what the result is.
+      </p>
+    </section>
+    
+    <!-- styling things based on state section -->
+    <section id="Styling_things_based_on_state" class="main-section">
+      <header id="section-header">
+        Styling things based on state
+      </header>
+      <p>
+        The final type of styling we shall take a look at in this tutorial is the ability to style things based on their state. A straightforward example of this is when styling links. When we style a link we need to target the
+        <code class="code-embed">
+          &lt;a&gt;
+        </code>
+        (anchor) element. This has different states depending on whether it is unvisited, visited, being hovered over, focused via the keyboard, or in the process of being clicked (activated). You can use CSS to target these different states — the CSS below styles unvisited links pink and visited links green.
+        <code class="code-section">
+          a:link { color: pink;}<br>
+          a:visited { color: green;}
+        </code>
+      </p>
+      <p>  
+        You can change the way the link looks when the user hovers over it, for example removing the underline, which is achieved by in the next rule:
+        <code class="code-section">
+          a:hover { text-decoration: none;}
+        </code>
+      </p>
+    </section>
+    
+    <!-- previous and next page buttons -->
+    <div id="btn-section">
+      <button type="button">&larr; back</button>
+      <button type="button">next &rarr;</button>
+    </div>
+
+    </div>
+  </main>
+</body>
+
+</html>
